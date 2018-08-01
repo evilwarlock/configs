@@ -1,7 +1,11 @@
-# Path to your oh-my-zsh configuration.
-ZSH=${HOME}/my-dot-files/oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+  export ZSH="/home/yzheng04/.oh-my-zsh"
 
 ZSH_THEME="candy"
+
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -15,6 +19,11 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 export LD_LIBRARY_PATH=/usr/local/lib
 
+# CUDA
+export CUDAPATH="/usr/local/cuda-9.0"
+export PATH=${PATH}:${CUDAPATH}/bin
+export LD_LIBRARY_PATH=LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${CUDAPATH}/lib64
+
  #Development Env
 export DEV_DISK="/home/yu/Development"
 export CELLAR_FOLDER="${DEV_DISK}/cellar"
@@ -24,7 +33,7 @@ export CELLAR_FOLDER="${DEV_DISK}/cellar"
 #export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${POSTGRESQL_PATH}
 
 # Python
-#export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 
 # Java
 export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
@@ -73,3 +82,6 @@ open()
 }
 
 alias mount-disk="sudo udisks --mount /dev/sdb"
+# Example aliases
+ alias zshconfig="gedit ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
